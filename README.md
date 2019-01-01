@@ -1,2 +1,3 @@
-# AndroidDeveloperFundamentals
-Android Developer Fundamentals (V2) from Google Developers Training
+## AndroidDeveloperFundamentals
+
+#### Android Developer Fundamentals (V2) from Google Developers Training
