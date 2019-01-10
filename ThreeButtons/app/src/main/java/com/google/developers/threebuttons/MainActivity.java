@@ -8,9 +8,6 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TEXT_1 = "" ;
-    private static final String TEXT_2 = "" ;
-    private static final String TEXT_3 = "" ;
     private Button button1;
     private Button button2;
     private Button button3;
@@ -20,26 +17,40 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+       setupViews();
+       setupClicks();
+    }
+
+    public void setupViews() {
         button1 = findViewById(R.id.text1);
         button2 = findViewById(R.id.text2);
         button3 = findViewById(R.id.text3);
     }
 
-    public void click1(View view) {
-        Intent intent = new Intent(this, SecondActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putString(TEXT_1, "text 1");
+    public void setupClicks() {
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setupIntents();
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setupIntents();
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setupIntents();
+            }
+        });
     }
 
-    public void click2(View view) {
+    public void setupIntents() {
         Intent intent = new Intent(this, SecondActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putString(TEXT_2, "text 2");
+        startActivity(intent);
     }
 
-    public void click3(View view) {
-        Intent intent = new Intent(this, SecondActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putString(TEXT_3, "text 3");
-    }
 }
